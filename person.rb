@@ -1,3 +1,6 @@
+# link with corrector
+require_relative('./corrector')
+
 # Initialize Person class
 class Person
   attr_accessor :name, :age
@@ -8,6 +11,7 @@ class Person
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @corrector = Corrector.new
   end
 
   # Add private method
@@ -16,6 +20,12 @@ class Person
 
   def of_age?
     @age >= 18
+  end
+
+  # add method to validate corrected name
+
+  def validate_name
+    @name = @corrector.correct_name(@name)
   end
 
   # Public method
