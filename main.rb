@@ -120,5 +120,41 @@ class App
     puts 'Person(Teacher) has been created successfully'
   end
 
-  
-main
+  def create_book
+    print 'Enter Book Title: '
+    title = gets.chomp
+
+    print 'Name Of Author: '
+    author = gets.chomp
+
+    book = Book.new(title, author)
+    @books.push(book)
+
+    puts 'Book successfully Created'
+  end
+
+  def create_rental
+    puts 'Select a book from the following list by number'
+    @books.each_with_index { |book, i| puts "#{i}) #{book}" }
+    book_i = gets.chomp.to_i
+    puts
+    puts 'Select a person from the following list by number (not ID)'
+    @people.each_with_index { |person, i| puts "#{i}) #{person}" }
+    person_i = gets.chomp.to_i
+    puts
+    print 'Enter Date: '
+    date = gets.chomp
+    rental = Rental.new(date, @books[book_i], @people[person_i])
+    @rentals.push(rental)
+    puts 'Rental created successfully'
+  end
+
+  def list_rentals
+    print 'ID of person: '
+    id = gets.chomp
+
+    puts 'Rentals:'
+    @rentals.each { |rental| puts rental if rental.person.id == id.to_i }
+  end
+end
+
