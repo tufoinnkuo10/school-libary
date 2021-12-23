@@ -124,7 +124,7 @@ class App
     print 'Enter Book Title: '
     title = gets.chomp
 
-    print 'Name Of Author: '
+    print 'Author Name: '
     author = gets.chomp
 
     book = Book.new(title, author)
