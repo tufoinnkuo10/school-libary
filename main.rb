@@ -72,4 +72,53 @@ class App
     @people.each { |person| puts person }
   end
 
+  def create_person
+    puts "Enter the number 1 to create Student"
+    print 'Enter the number 2 to create Teacher'
+    choice = gets.chomp
+
+    case choice
+    when '1'
+      create_student
+    when '2'
+      create_teacher
+    else
+      puts 'Invalid ... please check and try again'
+      nil
+    end
+  end
+
+  def create_student
+    print 'Enter Age: '
+    age = gets.chomp
+
+    print 'Enter Name: '
+    name = gets.chomp
+
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp.downcase == 'y'
+
+    student = Student.new(age: age, name: name, parent_permission: parent_permission, classroom: @classroom)
+    @people.push(student)
+
+    puts 'Person(student) has been created successfully'
+  end
+
+  def create_teacher
+    print 'Enter Age: '
+    age = gets.chomp
+
+    print 'Enter Name: '
+    name = gets.chomp
+
+    print 'Your Specialization: '
+    specialization = gets.chomp
+
+    teacher = Teacher.new(age: age, name: name, specialization: specialization)
+    @people.push(teacher)
+
+    puts 'Person(Teacher) has been created successfully'
+  end
+
   
+main
