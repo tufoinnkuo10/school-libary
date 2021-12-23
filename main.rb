@@ -7,4 +7,12 @@ require_relative './book'
 require_relative './teacher'
 require_relative './clasroom'
 
-# Initialize the App class
+# app class
+class App
+  def initialize
+    @books = []
+    @rentals = []
+    @people = []
+  end
+
+  
