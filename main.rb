@@ -5,7 +5,7 @@ require_relative './student'
 require_relative './rental'
 require_relative './book'
 require_relative './teacher'
-require_relative './clasroom'
+require_relative './classroom'
 
 # app class
 class App
@@ -74,7 +74,7 @@ class App
 
   def create_person
     puts "Enter the number 1 to create Student"
-    print 'Enter the number 2 to create Teacher'
+    puts 'Enter the number 2 to create Teacher..'
     choice = gets.chomp
 
     case choice
