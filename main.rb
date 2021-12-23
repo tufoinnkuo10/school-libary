@@ -23,7 +23,7 @@ class App
 
       option = gets.chomp
 
-      break if option >= 7
+      break if option == "end"
 
       handle_action option
     end
@@ -52,6 +52,24 @@ class App
     end
   end
 
-  
+  def actions
+    puts
+    puts 'Enter a corresponding number to chose an option:'
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rentals for a given person id'
+    puts 'end - Exit'
+  end
 
-main
+  def list_books
+    @books.each { |book| puts book }
+  end
+
+  def list_people
+    @people.each { |person| puts person }
+  end
+
+  
