@@ -1,7 +1,6 @@
-# link with corrector
 require_relative('./corrector')
 
-# Initialize Person class
+# ADD Person class
 class Person
   attr_accessor :name, :age, :rentals
   attr_reader :id
@@ -15,7 +14,10 @@ class Person
     @rentals = []
   end
 
-  # Add private method
+  def add_rental(rental)
+    @rentals.push(rental) unless @rentals.include?(rental)
+    rental.owner = self
+  end
 
   private
 
@@ -23,19 +25,11 @@ class Person
     @age >= 18
   end
 
-  # add method to validate corrected name
-
   def validate_name
     @name = @corrector.correct_name(@name)
   end
 
-  # Public method
-
   def can_use_services?
     of_age? || @parent_permission
-  end
-
-  def add_rental(book,date)
-    Rental.new(book, @name, date)
   end
 end
