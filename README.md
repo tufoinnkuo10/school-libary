@@ -1,24 +1,21 @@
 # Project Name
-morse code
+school libary and users
 
 ## Built With
 
 - Ruby
+ 
+ ## screen shot
+ ![screenshot](./image/main.png)
 
 ## Getting Started
 
 
-clone the repo or download from https://github.com/tufoinnkuo10/morse-decoder
+clone the repo or download from https://github.com/tufoinnkuo10/school-libary
 ## Run the application
-- ruby EnglishToMorseCode.rb
+- ruby main.rb
 
 ## Authors
-
-## Authors
-👤 **Victor**
-
-- GitHub: [@VICTOR-CHUKWU](https://github.com/VICTOR-CHUKWU)
-- LinkedIn: [Victor-chukwu](https://www.linkedin.com/in/victor-chukwu-95a020143)
 
 👤 **TUFOIN NKUO**
 
