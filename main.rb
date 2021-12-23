@@ -23,7 +23,7 @@ class App
 
       option = gets.chomp
 
-      break if option == "end"
+      break if option == 'end'
 
       handle_action option
     end
@@ -73,7 +73,7 @@ class App
   end
 
   def create_person
-    puts "Enter the number 1 to create Student"
+    puts 'Enter the number 1 to create Student'
     puts 'Enter the number 2 to create Teacher..'
     choice = gets.chomp
 
